@@ -1,0 +1,70 @@
+package Study.IO;
+/* Write a class Book in study.io
+a. Name, author name, cost, date of publication --- MyDate3*/
+import java.io.Serializable;
+import java.util.Arrays;
+
+import Study.Collections.MyDate3;
+
+	//Comparable<MyDate3>=generic interface created  
+		//implements==interface use kar rahe hai
+	//serialization =saving Object to file with data + metadata
+	
+public class Book implements Serializable {
+	private String bookname;
+	private String [] authors;
+	private float cost;
+	private MyDate3 dop;
+	
+	
+	public Book() {
+			super();
+		}
+	public Book(String bookname, String[] authors, float cost, MyDate3 dop) {
+			super();
+			this.bookname = bookname;
+			this.authors = authors;
+			this.cost = cost;
+			this.dop = dop;
+		}
+	public String getBookname() {
+		return bookname;
+	}
+	public void setBookname(String bookname) {
+		this.bookname = bookname;
+	}
+	public String[] getAuthors() {
+		return authors;
+	}
+	public void setAuthors(String[] authors) {
+		this.authors = authors;
+	}
+	public float getCost() {
+		return cost;
+	}
+	public void setCost(float cost) {
+		this.cost = cost;
+	}
+	public MyDate3 getDop() {
+		return dop;
+	}
+	public void setDop(MyDate3 dop) {
+		this.dop = dop;
+	}
+	private String showAuthors()
+	{
+		String str=" ";
+		for(int i=0;i<authors.length;i++)
+		{
+			str += authors[i]+",";
+		}
+		return str;
+	}
+
+	@Override
+	public String toString() {
+		return "Book [bookname=" + bookname + ", authors=" + Arrays.toString(authors) + ", cost=" + cost + ", dop="
+				+ dop + "]";
+	}
+}
+	

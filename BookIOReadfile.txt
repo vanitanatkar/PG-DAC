@@ -1,0 +1,48 @@
+package Study.IO;
+
+import java.io.EOFException;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InvalidClassException;
+import java.io.ObjectInputStream;
+import java.io.PrintWriter;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.Scanner;
+
+public class ReadBookFromFile {
+	public static void main(String[] args) throws IOException, ClassNotFoundException {
+		ArrayList<Object> mylist =null;
+
+		InputStream fin= new FileInputStream("D:\\Core_Java\\Book.bingo");
+
+		ObjectInputStream oin = new ObjectInputStream(fin);
+
+		try {
+			while(true) {
+				Object list=oin.readObject();
+				if(list==null)   break;
+				else {
+					System.out.println(list);
+				}
+			}
+			oin.close();
+		}
+		catch(Exception ex) {
+			System.out.println(" ");
+		}
+		oin.close();
+	}
+}
+
+/*Java basic Know.
+->file=folder(same as file only for OS comfort two write file in diff way as Folder)=sdt.in(C-lang)=sysout.in(Java)
+
+->file alsways stored in HDD
+->Process always stored in RAM;
+->By using OS we can share  Contain of Process to file by using Buffer
+->file Input Stream(inser in file) and file output stream(inser in process)using we insert in process/file through the buffer
+ */

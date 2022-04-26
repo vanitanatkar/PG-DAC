@@ -1,0 +1,57 @@
+package Study.Collections;
+
+import java.util.Iterator;
+import java.util.TreeSet;
+
+public class Palette {
+	private TreeSet<String>colors;
+	public Palette()
+	{
+		colors = new TreeSet<String>();
+	}
+
+	public Palette(TreeSet<String> colors) 
+	{
+		super();
+		this.colors = colors;
+	}
+	public TreeSet<String> getColors() 
+	{
+		return colors;
+	}
+
+	public void setColors(TreeSet<String> colors)
+	{
+		this.colors = colors;
+	}
+
+	@Override
+	public String toString() 
+	{
+		return "Palette [colors=" + colors + "]";
+	}
+	public void addToPalette(String color)
+	{
+		colors.add(color.toLowerCase());
+	}
+	public void showAllColorsInPallete()
+	{    
+		//traverse the TreeSet using Iterator
+		 Iterator<String> iter = colors.iterator();
+		while(iter.hasNext())
+		{
+			System.out.println(iter.next());
+		}
+		// traverse the TreeSet using stream forEach
+	} 	
+
+	public boolean removeFromPalette(String color)
+	{  
+		if(colors.remove(color))
+			return true;
+		return false;
+	}
+		public boolean isColorInPalette(String color)
+		{  
+			if(colors.contains(color))
+				return true;

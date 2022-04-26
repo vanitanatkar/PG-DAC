@@ -1,0 +1,28 @@
+package Study.PracticeAssignment;
+
+import java.io.FileInputStream;
+import java.io.ObjectInputStream;
+import java.util.ArrayList;
+
+public class ProductDeserialization {
+	public static void main(String[] args) {
+		ArrayList<Object> prodlist=null;
+		try {
+			FileInputStream fin=new FileInputStream("D:\\Core_Java\\Product.txt");
+			ObjectInputStream ois=new ObjectInputStream(fin);
+				
+				while(true) {
+					Object list = ois.readObject();
+					if(list==null)  { break;}
+					else {
+						System.out.println(list);
+					}
+			}
+				ois.close();
+			}
+			catch(Exception ex) {
+				System.out.println("");
+			}
+	}
+
+}

@@ -1,0 +1,38 @@
+package Study.IO;
+/* Write a class SerializeBook
+a. Main
+	i. Create 5 Book objects and write them to a file  books.bingo*/
+
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
+import java.util.Scanner;
+
+import Study.Collections.MyDate3;
+
+//serialization =saving Object to file with data + metadata
+//	DeSerialization=retrieving an object from file to RAM
+public class BookObjectToFile {
+
+	public static void main(String[] args) throws IOException {
+		Scanner sc=new Scanner(System.in);
+		String[] author= {"Vanita","Megha","Geeta"} ;
+        Book[] bk=new Book[5];
+		bk[0]=new Book("RuleB-reaker",author,200f,new MyDate3(12,11,2000));//flat cost hai f must write after cost
+		bk[1]=new Book("Yayati",author,400f,new MyDate3(1,2,2011));
+		bk[2]=new Book("10%Happier",author,500f,new MyDate3(11,3,2010));
+		bk[3]=new Book("This-isnotMyStory",author,600f,new MyDate3(12,2,2020));
+		bk[4]=new Book("TheSky",author,700f,new MyDate3(31,12,2021));
+		
+		OutputStream os=new FileOutputStream("D:\\Core_Java\\Book.bingo",true); //true for append
+		ObjectOutputStream oos=new ObjectOutputStream(os);
+		for(int i=0;i<bk.length;i++) {
+			oos.writeObject(bk[i]);//write in bingo 
+		}
+		oos.flush();   //to release bufferer ..ram me kuch na rahe;
+		oos.close();
+	}
+
+}

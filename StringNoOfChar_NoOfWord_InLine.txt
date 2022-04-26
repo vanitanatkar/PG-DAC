@@ -1,0 +1,33 @@
+package Study.PracticeAssignment;
+
+import java.util.Scanner;
+/*Write a class that accepts a line from the user , show how many words and letters are in 
+that line ( use split,charAt)..*/
+public class Line{
+
+	public static void main(String[] args) {
+		Scanner sc=new Scanner(System.in);
+		System.out.println("Enter a string");
+		String line=sc.nextLine();
+		 String [] str = line.split(" ");
+		System.out.println(" Number of Word In line Is  : " + str.length);
+
+		int count=0;
+
+	      for(int i=0; i<line.length(); i++)
+	      {
+	    	  if(line.charAt(i)!=' ')
+	    	  {
+	    		  count++;
+	    	  }
+	      }
+	      System.out.println(" Number of Character In line Is  : " + count);
+	      
+	      
+	      
+	      sc.close();
+	}
+
+
+	      
+}

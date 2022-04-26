@@ -1,0 +1,32 @@
+package Study.PracticeAssignment;
+
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectOutputStream;
+import java.util.ArrayList;
+//convert object data into a bytestream =serialization
+public class ProductSerialization {
+	public static void main(String[] args) {
+		ArrayList<Product2> list=new ArrayList<Product2>();
+		/* properties productname, cost, desc , brand */
+		list.add(new Product2("pondstalk",20.00,"powder","ponds"));
+		list.add(new Product2("parle",10.00,"cookies","parle-G"));
+		list.add(new Product2("Lipstick",400.00,"Cosmatics","lakme"));
+		list.add(new Product2("perfume",400.00,"Cosmatics","Titan"));
+		list.add(new Product2("womwns watch",4000.00,"watch","Titan"));
+		try {
+			FileOutputStream fout=new FileOutputStream("D:\\Core_Java\\Product.txt",true);
+			ObjectOutputStream oos=new ObjectOutputStream(fout); //copy that data into the file or Object
+			oos.writeObject(list);//we can write into the file
+			oos.flush();
+			oos.close();
+			System.out.println("Serialized product data is saved in Product.txt file:");
+		}
+		catch(IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+
+}
