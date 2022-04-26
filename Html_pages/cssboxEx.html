@@ -1,0 +1,78 @@
+<html>
+    <head>
+        <style>
+            *
+            {
+              margin-left: 50px;
+              margin-top: 50px;
+              margin-bottom: 50px;
+            }
+
+            div
+            {
+                margin: inherit;
+                padding: 20px;
+                border: 10px solid rgb(33, 15, 73);
+                width: fit-content;
+                background-color: rgb(228, 161, 228);
+            }
+
+            .component
+            {
+                white-space: pre-line;
+                width: fit-content;
+                height: fit-content;
+            }
+            .checkbox
+            {
+               text-decoration: underline;
+                text-decoration-color: rgb(236, 9, 9);
+                font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                color: rgb(19, 7, 2);
+                
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div>
+            <label>Enter Name</label>
+            <input type="text" />
+            <label>Enter age</label>
+            <input type="number" />
+            <label>Enter Date</label>
+            <input type="date" />
+        </div>
+        <div class="component">
+            23rd January is the birth date of
+            Netaji Subhash Bose....
+            He was a great freedom fighter who
+            founded Azad Hind Sena...
+        </div>
+        <label for="select">Choose a student:</label>
+<select name="Students" id="select-name">
+    <option >Select Option--</option>
+    <option >vanita natkar</option>
+    <option >shital pawar</option>
+    <option >swarali deshmukh</option>
+    <option >pagal shinde</option>
+    <option >jaideep mogal</option>
+    <option >Raj natkar</option>
+</select>
+
+<p>This is a paragraph. I m writing inside it</p>
+<div class="checkbox">
+    <label>Hobby: </label>
+        <input type="checkbox" id=hobby value="ok">reading
+        <input type="checkbox" id=hobby value="ok">writing
+   <br><br><label>Gender: </label>
+       <input type="radio"  name="gender" >male
+       <input type="radio"  name="gender" >female
+   
+  </div>
+    <div>
+        <pre><label>Address</label></pre>
+        <textarea cols="40" rows="5"></textarea>
+    </div>
+    </body>
+</html>

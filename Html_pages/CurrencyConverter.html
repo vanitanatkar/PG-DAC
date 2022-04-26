@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Converter</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src='main.js'></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing:border-box;
+        }
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        background-image: url("D:/Dow_Images/currency.jpg");
+
+        }
+        .container{
+            width:450px ;
+            background: gray;
+        }
+        h1{
+            color:#364547;
+            margin-bottom: 0.5em;
+        }
+        .container .box{
+            width: 100%;
+            display: flex;
+        }
+        .box div{
+            width:100%
+        }
+        select{
+            width: 95%;
+            height: 40px;
+            font-size:1em;
+            cursor: pointer;
+            outline: none;
+            background: #7868e6;
+            color: white;
+            margin: 0.2em 0;
+            border-radius: 10px;
+            border: none;
+        }
+        input{
+            width: 95%;
+            height: 40px;
+            font: 1em;
+            margin: 0.2em 0;
+        }
+        .btn{
+            width:98%;
+            height: 40px;
+            background: #364547;
+            color:white;
+            border-radius: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: lem;
+            margin:0.5em 0;
+
+        }    
+    </style>
+
+<!-- <script>
+    function CurranacyConvertor()
+    {
+    var ConAmt = document.getElementById("Amount").value
+    var Operator2 = document.getElementById("sel2").value
+    var finalAmount
+
+    if(Operator2=='dol')
+         finalAmount=ConAmt*75;
+    else if(Operator2=='eur')
+         finalAmount=ConAmt*80;
+    else if(Operator2=='eur')
+         finalAmount=ConAmt;    
+    else
+    finalAmount=ConAmt; 
+   
+    document.getElementById("Display").value=finalAmount
+   }
+
+    function clearMsg()
+    {
+        document.getElementById("Amount").value = " "
+    }    
+</script> -->
+</head>
+<body  class="bg-success p-2 text-dark bg-opacity-75">
+    <div class="Container">
+        <h1>Currency Converter</h1>
+        <div class="box">
+        <div class="left_box">
+            <select name="currency" class="curency">
+           <option>&#x20B9;</option>
+            <option>&#128;</option>
+            <option>&#36;</option>
+            <option>&#165;</option>
+            <option>&#163;</option></select>
+            <label >Enter Amount : </label>
+            <input type="number" name="amt"  class="fst-italic">
+        </div>
+        <div class="right_box">
+            <select name="currency" class="currency">
+                <option>&#x20B9;</option>
+                <option>&#128;</option>
+                <option>&#36;</option>
+                <option>&#165;</option>
+                <option>&#163;</option></select>
+            <label>Result:</label>
+            <input type="number" name="res" placeholder="0.00" class="fst-italic">
+        </div>
+    </div >
+    <button class="btn" type="button">Convert</button>
+        
+    </div>
+
+</body>
+</html>

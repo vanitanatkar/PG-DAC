@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <script type="text/javascript">
+        function isempty() {
+            if (document.getElementById("tf1").value == "") {
+                alert("it cannot be blank")
+            }
+            else {
+                document.getElementById("myform").submit()
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form action="post" id="myform" >
+        <input type="test2.html" id="tf1" name="data" />
+        <input type="button" value="ok" onclick="isempty()" />
+    </form>
+</body>
+
+</html>

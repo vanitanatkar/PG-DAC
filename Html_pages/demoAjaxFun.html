@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+</head>
+<script>
+    $(document).ready(() => {
+
+        $('#calc').click(() => {
+
+            var n1 = $('#n1').val()
+            var n2 = $('#n2').val()
+
+            var url = `/maths/add/${n1}/${n2}`
+            $.ajax(
+                {
+                    url: url,
+                    type: 'POST',
+                    success: function (respData) {
+                        $('#d1').html(`<p>${respData}</p>`)
+                    }
+                }//parameter
+
+            )//end of ajax call
+        }) //end of ready
+    })//end of ajax
+    
+
+
+</script>
+
+<body>
+
+</body>
+
+</html>

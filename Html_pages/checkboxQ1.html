@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+    <title>Q1</title>
+</head>
+<style>
+    div{
+        border-style: solid;
+        border-color: rgb(57, 7, 240);
+        border-radius: 20px;
+    }
+</style>
+<body>
+    <p> Please click the checkBox :</p>
+    <label for="check">Checkbox:</label>
+    <input type="checkbox" id="check" onclick="checkBoxFun()" />
+    <div id="textinp" style="display: none"> checkbox is checked
+    <input type="button" id="button" value="button" />
+    </div>
+<script>
+    function checkBoxFun() {
+    // Get the checkbox
+    var checkBox = document.getElementById("check");
+    // Get the output text
+    var text = document.getElementById("textinp");
+  
+    // If the checkbox is checked, display the output text
+    if (checkBox.checked == true){
+      text.style.display = "block";
+    } else {
+      text.style.display = "none";
+    }
+  }
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <script src="jquery-3.6.0.js"></script>
+    </head>
+    <script>
+        $(document).ready(function(){
+          
+        $("#b1").click(function(){
+            
+            let s = $("#t1").val();
+            console.log(s)
+            //$("p").text(s.toUpperCase())
+           $("#p1").text(s.toUpperCase())
+           //$(".para").text(s.toUpperCase())
+          });
+        $("#b2").click(()=>{ })
+        });
+        </script>
+        </head>
+        <body>
+        Enter Name<input type="text" id="t1" />
+        <br>
+        <p id="p1" ></p>
+
+        <p class="para"></p>
+        <p ></p>
+        <p ></p>
+        <p ></p>
+
+        <button id="b1" >Click me </button>
+        </body>
+    </html>
