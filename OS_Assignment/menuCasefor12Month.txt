@@ -1,0 +1,30 @@
+x="y"
+
+while [ $x="y" ]
+do
+          echo " /...enter a number between 1 to 12 .../"
+          echo " /.....two quit enter 0..... / "
+          read x
+          x=`expr $x`
+          case $x in
+             1) echo "January" ;;
+             2) echo "February" ;;
+             3) echo "March" ;;
+             4) echo "April " ;;
+             5) echo "May" ;;
+             6) echo "June" ;;
+             7) echo "July" ;;
+             7) echo "August" ;;
+             9) echo "September" ;;
+            10) echo "October" ;;
+            11) echo " November" ;;
+            12) echo "December" ;;
+            0) echo " Exit"
+                exit ;;
+esac
+echo " Don you want two continue[y/n]:"
+read x
+if [ $x != "y" ];then
+        exit
+fi
+done

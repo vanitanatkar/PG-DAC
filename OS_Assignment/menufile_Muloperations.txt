@@ -1,0 +1,80 @@
+echo -n "Enter number"
+read num
+fact=1
+for(( i=1; i<=num; i++ ))
+do
+        fact=$[ $fact * $i ]
+done
+echo " factorial of $num is $fact "
+
+root@LAPTOP-F4O6M5M1:~/ShellAss2# cat filemenu1.sh
+function menu {
+        echo "1.show the content of the file "
+        echo "2.Delet the file"
+        echo "3.create file name filedemo.txt give write and execute to other and group"
+        echo "4.Show the size of file"
+        echo "5.create file filedemo.text and rename copyfiledemo.txt"
+        echo "6. Quit"
+}
+
+
+function showcontent {
+
+echo "Enter file name to shwo details of file :"
+read fn
+cat $fn
+
+}
+
+function deletefile {
+        echo "Enter file name which you want to delete:"
+        read fn
+        rm $fn
+        ls -l
+}
+
+function fileChmod {
+echo " Enter file name:"
+read name
+chmod 3 $name
+ls -l $name
+#group and other write and execute file
+
+}
+
+function showsize {
+        echo "Enter file name to shw the details of file:"
+        read fn
+        ls -l $fn
+}
+
+function renamefile {
+        echo " Enter file name which you want to rename:"
+        read fn
+        mv $fn copy$fn
+        ls -l
+ }
+
+
+while [ 1 ]
+do
+        menu
+        echo "enter your choice:"
+        read ch
+        case $ch in
+                1) showcontent  ;;
+                2) deletefile  ;;
+                3) fileChmod  ;;
+                4) showsize    ;;
+                5) renamefile  ;;
+                6) Quit        ;;
+                *)echo "Enter valid input" ;;
+        esac
+        echo "Do you want to continue [y/n]"
+        read x
+
+if [ $x=='n' ]
+then
+break
+fi
+done

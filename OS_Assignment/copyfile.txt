@@ -1,0 +1,11 @@
+
+read -p "Enter a file name:" fn
+if [ -f $fn ]; then
+        echo "this file is Already Exists : "
+        cp $fn ./copy$fn
+        ls
+else
+        echo "File not Exits "
+
+ls
+fi

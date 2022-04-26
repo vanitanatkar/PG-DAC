@@ -1,0 +1,46 @@
+#include<stdio.h>
+#include<unistd.h>
+void main()
+{
+        int rv,x=0 ;
+        rv=fork();
+        if(rv > 0)
+        {
+                while(x++  < 5 )
+                {
+                        sleep(2);
+                        printf("parent pid=%d,ppid=%d \n ", getpid(),getppid());
+
+                        int num1=-1,num2=1,num3,i;
+                        for( i=0;i<10;i++)
+                        {
+                                num3=num1+num2;
+                                printf("%d \n ",num3);
+                                num1=num2;
+                                num2=num3;
+                        }
+                }
+                printf("\n");
+        }
+
+        if(rv == 0)
+        {
+                while(x++ < 5)
+                {
+                  sleep(1);
+
+                  printf("child pid=%d,ppid=%d \n ", getpid(),getppid());
+
+                  int j,k;
+                  for(j=1;j<10;j++)
+                  {
+                    for(k=1;k<=10;k++)
+                    {
+                      printf("%d \t",j*k);
+                    }
+                      printf("\n");
+                  }
+               }
+        }
+
+}

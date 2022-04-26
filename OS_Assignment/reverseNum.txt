@@ -1,0 +1,13 @@
+echo "Enter number which you want to reverse:"
+read num
+rev=0
+
+while [ $num -gt 0 ]
+do
+
+        sd=$(($num % 10))
+        rev=$(( $rev * 10 + $sd))
+        num=$(($num / 10))
+done
+
+echo "Reverse number of entered digit is $rev "

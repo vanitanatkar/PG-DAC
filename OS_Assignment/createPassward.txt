@@ -1,0 +1,12 @@
+echo "enter uname and password"
+read uname password
+if [ $uname == 'Vanita' ];then
+if [ $password == '123' ];then
+
+echo "login correct"
+else "password incorrect"
+fi
+else
+echo "uname incorrect"
+fi
+#fi is kwyward to close loop

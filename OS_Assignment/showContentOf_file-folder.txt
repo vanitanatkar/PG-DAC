@@ -1,0 +1,24 @@
+#accept a filename in current folder
+#if it is a file show contents using cat
+# if is a folder then show contents using ls
+#unary operator true faluse i.e.$fn
+#-p print massage
+
+
+read -p "enter a filename" fn
+if [ -e $fn ]; then
+        echo "$fn exitsts"
+else
+        echo "$fn does not exits"
+fi
+
+
+
+if [ -f $fn ]; then
+        echo "content of file are:"
+        cat $fn
+
+elif [ -d $fn ] ; then
+       echo " Content of folder are:"
+        ls $fn
+fi

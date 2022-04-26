@@ -1,0 +1,37 @@
+#include<stdio.h>
+#include<unistd.h>
+#include<wait.h>
+void main()
+{
+        int rv;
+
+        rv=fork();
+        if(rv>0)
+        {
+                rv=fork();
+
+                if(rv==0)
+                {
+                        printf("CHILD 2");
+                        char *arr[]={"ps","-ef",NULL};
+                        execv("/bin/ps",arr);
+                         printf("child2 is done:");
+                }
+                else
+                {
+                        sleep(2);
+                        wait(NULL);
+                        printf("Done Goodbye...\n ");
+
+                }
+
+        }
+        if(rv==0)
+        {
+                printf("CHILD 1");
+                char *arr[]={"ls","-l",NULL};
+                        execl("/bin/ls","-l",NULL);
+                        printf("child1 is done:");
+
+        }
+}

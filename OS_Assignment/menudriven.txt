@@ -1,0 +1,85 @@
+function shownumtype {
+
+        echo "Enter number:"
+        read num4
+
+        res=$(($num4%2))
+
+        if [ $res -eq 0 ] ;the
+
+                  echo "$num4 is Even"
+
+               else
+        echo" $num4 is Odd "
+        fi
+
+        if [ $num4 -gt 0 ] ; then
+                echo "$num4 is positive "
+        else
+                echo "$num4 is Negative "
+        fi
+
+}
+function showpower {
+
+        echo "Enter number : "
+        read num3
+       pow=1
+
+        for (( x=1; x<=$num3; x++ ))
+        do
+                ((pow=$pow\*$num3))
+
+      done
+
+   echo "$pow"
+
+}
+
+function showmultable {
+
+        echo "Enter number:"
+        read num2
+
+     for ((i=1;i<=10;i++))
+        do
+                echo " $num2 * $i =`expr $num2\*$i` "
+
+        done
+
+        }
+
+function menu {
+
+
+        echo " 1) showmultable of given number "
+        echo " 2) show power of given number up to number"
+        echo  " 3) show given number is odd/even/+ve/-ve "
+        echo  " 4) Quit "
+
+}
+
+
+x='y'
+while [ $x == 'y' ]
+do
+
+         menu
+         echo "enter your choice: "
+         read ch
+         case $ch in
+
+                 1) showmultable ;;
+                 2) showpower ;;
+                 3) shownumtype  ;;
+                 4)   exit;;
+                *) echo " Enter valid input "  ;;
+
+esac
+echo "Do you want to continue:[y/n]"
+read x
+
+if [ $x != 'y'  ] ; then
+        exit
+fi
+done

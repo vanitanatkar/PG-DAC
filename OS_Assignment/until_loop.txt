@@ -1,0 +1,10 @@
+# this loop will run as long condition is false...
+
+
+x=0
+until [ $x -gt 10 ];do
+
+        echo $x
+        ((x++))
+
+done

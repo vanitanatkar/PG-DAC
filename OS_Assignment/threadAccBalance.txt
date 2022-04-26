@@ -1,0 +1,32 @@
+#include "stdio.h"
+#include "pthread.h"
+#include "unistd.h"
+
+int balance=10000;
+void deposit()
+{
+        int x=0;
+        while(x++ < 10){
+                balance = balance + 100;
+        printf("\n after adding 100 rs the bal is %d ",balance);
+        }
+}
+
+void withdraw()
+{
+        int x=0;
+        while(x++ <  10){
+                balance = balance - 200;
+                        printf("\n after withdrawing 200 ruppees the bal %d",balance);
+        }
+}
+void main()
+{
+    pthread_t th1, th2;
+    pthread_create(&th1,NULL,(void *)deposit,NULL);
+    pthread_create(&th2,NULL,(void *)withdraw,NULL);
+
+    pthread_join(th1,NULL);
+    pthread_join(th2,NULL);
+    printf("\n the final bal is %d",balance);
+}

@@ -1,0 +1,13 @@
+#include<stdio.h>
+#include<unistd.h>
+void main()
+{
+        fork();
+         fork();
+          fork();
+           fork();
+           sleep(2);
+           printf("\n  Hello pid=%d,ppid=%d \n",getpid(),getppid());
+           printf("\n");
+
+}

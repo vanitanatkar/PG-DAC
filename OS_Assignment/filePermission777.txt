@@ -1,0 +1,21 @@
+
+x='y'
+while [ $x == 'y' ]
+do
+     echo "enter file name: "
+     read fn
+     if [ -f "$fn" ]
+     then
+             echo -n "$fn is found"
+             chmod 777 $fn
+             ls -l $fn
+     else
+             echo -n "$fn is not found"
+     fi
+
+            echo "Do you want to continue:[y/n]"
+            read x
+                if [ $x != 'y' ] ; then
+                exit
+                fi
+        done

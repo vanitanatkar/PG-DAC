@@ -1,0 +1,44 @@
+
+void editor()
+{
+
+        int x;
+        while( x++ < 10 )
+
+        {
+                printf("editor code.. \n");
+                sleep(1);
+        }
+}
+void spellchecker()
+{
+        int x;
+
+        while( x++ < 10 )
+        {
+         printf("spellchecker code..\n");
+         sleep(1);
+        }
+}
+void main()
+{
+        pthread_t edit,spell;
+        //attach the path of execution to both the threads
+
+        pthread_create(&edit,NULL,(void *)editor,NULL);
+        pthread_create(&spell,NULL,(void *)spellchecker,NULL);
+        pthread_join(spell,NULL);
+         pthread_join(edit,NULL);
+
+
+        printf("main ends ");
+/*
+        while(1)
+        {
+        printf("main In \n");
+//      sleep(1);
+}
+*/
+
+
+}

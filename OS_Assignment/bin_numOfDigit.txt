@@ -1,0 +1,14 @@
+echo "enter a number"
+read num
+
+if [ $num -gt 99 ];then
+        echo "$num is more than 2 digits"
+
+elif [ $num -gt 10 ];then
+        echo "$num is 2 digits"
+
+elif [ $num -ge 0 ];then
+        echo "$num is single digit"
+else
+        echo "$num is negative"
+fi

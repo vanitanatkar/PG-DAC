@@ -1,0 +1,45 @@
+while [ 1 ]
+do
+        echo "1.Add content to the file"
+        echo "2.Display the content in Uppercase"
+        echo "3.Display the content"
+        echo "4.Display the content in Lowercase"
+        echo "5.Show number of blank lines"
+        echo "6.Show total number of lines"
+        echo "7.quit"
+
+        echo "Enter your choice"
+        read ch
+
+        case $ch in
+
+                1)      echo "Enter Name"
+                        read n
+                        echo $n >> output.txt
+                        ;;
+                2)
+                        tr '[ a-z ]' '[ A-Z ]' < output.txt
+                        ;;
+                3)
+                        cat output.txt
+                        ;;
+                4)
+                        tr '[ A-Z ]' '[ a-z ]' < output.txt
+                        ;;
+                5)
+                        grep -c "^$" output.txt
+                        ;;
+                6)
+                        wc -l output.txt
+                        ;;
+                7)    
+			break;
+
+
+                esac
+
+
+
+
+
+done

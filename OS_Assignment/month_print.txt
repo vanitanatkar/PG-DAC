@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#the above line indicated which shell should be used to run this script
+#this line is comment
+#if the first line is not written ,then it is by default bash script
+
+echo "Enter your name"
+read name
+echo "Welcome $name"
+echo "Enter month number : "
+read number
+
+cal -m $number
